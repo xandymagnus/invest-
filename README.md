@@ -22,8 +22,8 @@ The project will initially be developed as a **Minimum Viable Product (MVP)**, p
 
 ### MVP — Planned Features
 
-- [ ] Record expenses and income.
-- [ ] Display financial transactions.
+- [x] Record expenses and income.
+- [x] Display financial transactions.
 - [ ] Edit and delete transactions.
 - [ ] Create and manage categories.
 - [ ] Display monthly expenses, income, and balance.
@@ -51,7 +51,7 @@ Planned technologies for development:
 - **ORM:** SQLAlchemy.
 - **Version Control:** Git and GitHub.
 
-*Technologies and features may be adjusted as the project evolves.*
+_Technologies and features may be adjusted as the project evolves._
 
 ## Project Structure
 
@@ -67,8 +67,8 @@ The project will follow **Semantic Versioning** in the `MAJOR.MINOR.PATCH` forma
 
 ### Version History
 
-| Version | Status | Description |
-|---|---|---|
+| Version  | Status   | Description                                                          |
+| -------- | -------- | -------------------------------------------------------------------- |
 | `v0.1.1` | Planning | Definition of the project scope, initial proposal, and MVP features. |
 
 Versions will be updated as features are developed and released.
