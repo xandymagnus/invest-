@@ -16,8 +16,8 @@ buttonAdd.addEventListener("click", (event) => {
     const incomeValue = inputIncome.value;
     const expendValue = inputExpend.value;
 
-    newIncome.innerText = incomeValue;
-    newExpend.innerText = -expendValue; 
+    newIncome.innerText = `Income - ${incomeValue}`;
+    newExpend.innerText = `Expend - ${expendValue}`; 
 
     if (incomeValue != '') {
         list.appendChild(newIncome);
@@ -28,4 +28,16 @@ buttonAdd.addEventListener("click", (event) => {
         list.appendChild(newExpend);
         inputExpend.value = ''; 
     }
+
+    const total = calculate(incomeValue, expendValue);
+    result.innerHTML = `Total: ${total.next().value}`;
 })
+
+function* calculate(income, expend) {
+    let total =  income - expend;
+    
+    while (true) {
+        yield total;
+        total = total + income - expend;
+    }
+}
