@@ -4,24 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invest+</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Display options  -->
+    <button id="choose">Add ˅</button>
+
+    <div id="add-div" class="hidden">
+        <button id="income-btn">Income</button>
+        <button id="expense-btn">Expense</button>
+    </div>
+
     <form id="form">
         <!-- Incomes values -->
-        <p>Income:</p>
-        <input type="number" class="input-income">
+         <div class="add-income hidden">
+             <p>Income:</p>
+             <input type="number" class="input-income">
+             <button class="send-value">Send</button>   
+         </div>
     
-        <!-- Expend values -->
-        <p>Expend:</p>
-        <input type="number" class="input-expend">
+        <!-- Expense values -->
+         <div class="add-expense hidden">
+             <p>expense:</p>
+             <input type="number" class="input-expense">
+             <button class="send-value">Send</button>
+         </div>
 
-        <!-- Used to create a list of incomes and expends -->
-        <button id="add-value">Computar</button>
+        <!-- Used to create a list of incomes and expenses -->
     </form>
 
     <!-- Create a financial list -->
     <ul id="list"></ul>
-    <!-- Print the result calculated by incomes - expends -->
+    <!-- Print the result calculated by incomes - expenses -->
     <p id="result"></p>
     
     <script src="main.js"></script>
