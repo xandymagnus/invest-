@@ -1,10 +1,10 @@
-# MeuInvest
+# Invest+
 
 > A personal finance management system designed to organize expenses, income, and track financial health.
 
 ## About the Project
 
-**MeuInvest** is a personal finance management project designed to help users manage their financial transactions, organize expenses by category, and gain a clear understanding of how their money is being spent.
+**Invest+** is a personal finance management project designed to help users manage their financial transactions, organize expenses by category, and gain a clear understanding of how their money is being spent.
 
 The goal is to provide a minimalistic and intuitive interface where users can record expenses and income, review their financial history, and track their balance over a selected period.
 
