@@ -69,7 +69,7 @@ The project will follow **Semantic Versioning** in the `MAJOR.MINOR.PATCH` forma
 
 | Version  | Status   | Description                                                          |
 | -------- | -------- | -------------------------------------------------------------------- |
-| `v0.1.1` | Planning | Definition of the project scope, initial proposal, and MVP features. |
+| `v0.1.3` | Planning | Definition of the project scope, initial proposal, and MVP features. |
 
 Versions will be updated as features are developed and released.
 
