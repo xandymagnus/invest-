@@ -6,38 +6,41 @@ const list = document.getElementById('list');
 const result = document.getElementById('result');
 
 const form = document.getElementById('form');
+const totalGenerator = calculate();
+totalGenerator.next()
 
 buttonAdd.addEventListener("click", (event) => {
     event.preventDefault();
 
-    newIncome = document.createElement('li');
-    newExpend = document.createElement('li');
-
-    const incomeValue = inputIncome.value;
-    const expendValue = inputExpend.value;
-
-    newIncome.innerText = `Income - ${incomeValue}`;
-    newExpend.innerText = `Expend - ${expendValue}`; 
-
-    if (incomeValue != '') {
+    
+    const incomeValue = Number(inputIncome.value) || 0;
+    const expendValue = Number(inputExpend.value) || 0;
+    
+    
+    if (incomeValue > 0) {
+        newIncome = document.createElement('li');
+        newIncome.innerText = `Income - ${incomeValue}`;
         list.appendChild(newIncome);
         inputIncome.value = '';
     }
     
-    if (expendValue != '') {
+    if (expendValue > 0) {
+        newExpend = document.createElement('li');
+        newExpend.innerText = `Expend - ${expendValue}`; 
         list.appendChild(newExpend);
         inputExpend.value = ''; 
     }
 
-    const total = calculate(incomeValue, expendValue);
-    result.innerHTML = `Total: ${total.next().value}`;
+    const nextTotal = totalGenerator.next({ income: incomeValue, expend: expendValue }).value
+    result.innerHTML = `Total: ${nextTotal}`;
 })
 
-function* calculate(income, expend) {
-    let total =  income - expend;
+
+function* calculate() {
+    let total =  0;
     
     while (true) {
-        yield total;
-        total = total + income - expend;
+        const data = yield total;
+        total = total + data.income - data.expend;
     }
 }
