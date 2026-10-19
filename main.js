@@ -3,11 +3,13 @@ const buttonAdd = document.getElementById("choose");
 const buttonIncome = document.getElementById("income-btn");
 const buttonExpense = document.getElementById("expense-btn");
 const buttonSend = document.querySelectorAll(".send-value");
+console.log([...buttonSend]);
+
 
 // Divs
 const divAdd = document.getElementById("add-div");
 const divIncome = document.querySelector(".add-income");
-const divExpense = document.querySelector("add-expense");
+const divExpense = document.querySelector(".add-expense");
 
 // Inputs
 const inputIncome = document.querySelector(".input-income");
@@ -29,6 +31,11 @@ buttonAdd.addEventListener("click", (event) => {
     event.preventDefault();
 
     divAdd.classList.toggle("hidden");
+    if (buttonAdd.textContent === "Add ˅"){
+        buttonAdd.textContent = "Add ˄";
+    } else {
+        buttonAdd.textContent = "Add ˅"
+    }
 });
 
 // Show only income div
@@ -45,8 +52,8 @@ buttonExpense.addEventListener("click", (event) => {
     [buttonAdd, divAdd, divExpense].forEach(element => element.classList.toggle("hidden")); // cross array and toggle class "hidden"
 });
 
-// Add button listener
-buttonSend.addEventListener("click", (event) => {
+// Add send button who spreaded by two divs
+[...buttonSend].forEach(element => element.addEventListener("click", (event) => {
     event.preventDefault();
 
     // Inputs values
@@ -59,6 +66,9 @@ buttonSend.addEventListener("click", (event) => {
         newIncome.innerText = `Income - ${incomeValue}`;
         list.appendChild(newIncome);
         inputIncome.value = "";
+
+        divIncome.classList.toggle("hidden");
+        buttonAdd.classList.toggle("hidden");
     };
     
     // Validation
@@ -66,13 +76,16 @@ buttonSend.addEventListener("click", (event) => {
         newexpense = document.createElement("li");
         newexpense.innerText = `expense - ${expenseValue}`; 
         list.appendChild(newexpense);
-        inputExpense.value = ""; 
+        inputExpense.value = "";
+        
+        divExpense.classList.toggle("hidden");
+        buttonAdd.classList.toggle("hidden");
     };
 
     // Send the input values to update the generator state
     const nextTotal = totalGenerator.next({ income: incomeValue, expense: expenseValue }).value
     result.innerHTML = `Total: ${nextTotal}`; // Print total value returned by the function
-});
+}));
 
 function* calculate() {
     // Initialize the total accumulated balance
