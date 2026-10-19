@@ -9,40 +9,61 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <p>Expenses by category</p>
+        <p>Management</p>
+        <!-- Here is search area -->
+        <!-- Here is profile area (with details: sing out and account info) -->
+    </header>
 
-    <header></header>
+    <div class="layout">
+        <nav>
+            <section>
+                <h2>Categories</h2>
+            </section>
 
-    <main>
-        <!-- Display options  -->
-        <button id="choose">Add ˅</button>
+            <section>
+                <h2>Accounts</h2>
+            </section>
 
-        <div id="add-div" class="hidden">
-            <button id="income-btn">Income</button>
-            <button id="expense-btn">Expense</button>
-        </div>
+            <section>
+                <h2>Labels</h2>
+            </section>
+        </nav>
 
-        <form id="form">
-            <!-- Incomes values -->
-            <div class="add-income hidden">
-                <p>Income:</p>
-                <input type="number" class="input-income">
-                <button class="send-value">Send</button>
+        <main>
+            <!-- Display options  -->
+            <button id="choose">Add ˅</button>
+    
+            <div id="add-div" class="hidden">
+                <button id="income-btn">Income</button>
+                <button id="expense-btn">Expense</button>
             </div>
-        
-            <!-- Expense values -->
-            <div class="add-expense hidden">
-                <p>Expense:</p>
-                <input type="number" class="input-expense">
-                <button class="send-value">Send</button>
-            </div>
-        </form>
+    
+            <form id="form">
+                <!-- Incomes values -->
+                <div class="add-income hidden">
+                    <p>Income:</p>
+                    <input type="number" class="input-income">
+                    <button class="send-value">Send</button>
+                </div>
             
-        <!-- Used to create a list of incomes and expenses -->
-        <!-- Create a financial list -->
-        <ul id="list"></ul>
-        <!-- Print the result calculated by incomes - expenses -->
-        <p id="result"></p>
-    </main>
+                <!-- Expense values -->
+                <div class="add-expense hidden">
+                    <p>Expense:</p>
+                    <input type="number" class="input-expense">
+                    <button class="send-value">Send</button>
+                </div>
+            </form>
+                
+            <!-- Used to create a list of incomes and expenses -->
+            <!-- Create a financial list -->
+            <ul id="list"></ul>
+            <!-- Print the result calculated by incomes - expenses -->
+            <p id="result"></p>
+        </main>
+    </div>
+
     
     <script src="main.js"></script>
 </body>
