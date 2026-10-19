@@ -84,7 +84,7 @@ buttonExpense.addEventListener("click", (event) => {
 
     // Send the input values to update the generator state
     const nextTotal = totalGenerator.next({ income: incomeValue, expense: expenseValue }).value
-    result.innerHTML = `Total: ${nextTotal}`; // Print total value returned by the function
+    result.innerHTML = `Total: ${nextTotal.toFixed(2)}`; // Print total value returned by the function
 }));
 
 function* calculate() {
