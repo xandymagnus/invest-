@@ -1,3 +1,18 @@
+body {
+    min-height: 100vh;
+}
+
+header {   
+    display: flex;
+    justify-content: space-around;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .hidden {
     display: none;
 }
