@@ -1,0 +1,24 @@
+:root {
+    /* Colors */
+    --background-color: #0f141d;
+    --surface-color: #171f2b;
+    --border-color: #263244;
+    --primary-color: #10b981;
+    --income-color: #10b981;
+    --expend-color: #f87171;
+    --text-color: #e2e8f0;
+    --text-color-secondary: #94a3b8;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+    
+    /* Borders */
+    --small-radius: 6px;
+    --medium-radius: 10px;
+    --large-radius: 16px;
+}
