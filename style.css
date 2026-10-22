@@ -10,9 +10,18 @@ header {
 }
 
 nav {
+    /* Display */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+
+    /* Card */
+    background-color: var(--surface-color);
+    padding: var(--space-3) 0 var(--space-3) 0;
+    border-radius: var(--medium-radius);
+    width: 20vw;
+    height: 50vh;
 }
 
 #choose {
@@ -41,7 +50,6 @@ nav {
     background-color: var(--surface-color);
     padding: var(--space-3) 0 var(--space-3) 0;
     border-radius: var(--medium-radius);
-    width: 100vw;
 }
 
 #income-btn, #expense-btn {
