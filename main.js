@@ -64,6 +64,7 @@ buttonExpense.addEventListener("click", (event) => {
     if (incomeValue > 0) {
         newIncome = document.createElement("li");
         newIncome.innerText = `Income - ${incomeValue}`;
+        newIncome.classList.add("income");
         list.appendChild(newIncome);
         inputIncome.value = "";
 
@@ -74,7 +75,8 @@ buttonExpense.addEventListener("click", (event) => {
     // Validation
     if (expenseValue > 0) {
         newexpense = document.createElement("li");
-        newexpense.innerText = `expense - ${expenseValue}`; 
+        newexpense.innerText = `Expense - ${expenseValue}`;
+        newexpense.classList.add("expense");
         list.appendChild(newexpense);
         inputExpense.value = "";
         
