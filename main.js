@@ -1,3 +1,8 @@
+// Date
+new Date();
+console.log(Date.now());
+Date = Date.now();
+
 // Buttons
 const buttonAdd = document.getElementById("choose");
 const buttonIncome = document.getElementById("income-btn");
@@ -56,12 +61,14 @@ buttonExpense.addEventListener("click", (event) => {
 [...buttonSend].forEach(element => element.addEventListener("click", (event) => {
     event.preventDefault();
 
+    let validate = false;
+
     // Inputs values
     const incomeValue = Number(inputIncome.value) || 0;
     const expenseValue = Number(inputExpense.value) || 0;
     
     // Validation
-    if (incomeValue > 0) {
+    if (incomeValue > 0 && incomeValue <= 1e+9) {
         newIncome = document.createElement("li");
         newIncome.innerText = `Income - ${incomeValue}`;
         newIncome.classList.add("income");
@@ -70,10 +77,11 @@ buttonExpense.addEventListener("click", (event) => {
 
         divIncome.classList.toggle("hidden");
         buttonAdd.classList.toggle("hidden");
+        validate = true;
     };
     
     // Validation
-    if (expenseValue > 0) {
+    if (expenseValue > 0 && expenseValue <= 1e+9) {
         newexpense = document.createElement("li");
         newexpense.innerText = `Expense - ${expenseValue}`;
         newexpense.classList.add("expense");
@@ -82,11 +90,14 @@ buttonExpense.addEventListener("click", (event) => {
         
         divExpense.classList.toggle("hidden");
         buttonAdd.classList.toggle("hidden");
+        validate = true;
     };
 
-    // Send the input values to update the generator state
-    const nextTotal = totalGenerator.next({ income: incomeValue, expense: expenseValue }).value
-    result.innerHTML = `Total: ${nextTotal.toFixed(2)}`; // Print total value returned by the function
+    if (validate){
+        // Send the input values to update the generator state
+        const nextTotal = totalGenerator.next({ income: incomeValue, expense: expenseValue }).value
+        result.innerHTML = `Total: ${nextTotal.toFixed(2)}`; // Print total value returned by the function
+    }
 }));
 
 function* calculate() {
