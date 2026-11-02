@@ -3,8 +3,6 @@ const buttonAdd = document.getElementById("choose");
 const buttonIncome = document.getElementById("income-btn");
 const buttonExpense = document.getElementById("expense-btn");
 const buttonSend = document.querySelectorAll(".send-value");
-console.log([...buttonSend]);
-
 
 // Divs
 const divAdd = document.getElementById("add-div");
