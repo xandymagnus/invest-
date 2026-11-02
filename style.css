@@ -40,12 +40,16 @@ nav {
     border-radius: var(--medium-radius);
     width: 15vw;
     height: 50vh;
+
+    /* Spacing */
+    margin: auto;
 }
 
 main {
     background-color: var(--surface-color);
     margin: auto;
 
+    /*  */
     border-radius: var(--medium-radius);
     padding: var(--space-6);
 }
