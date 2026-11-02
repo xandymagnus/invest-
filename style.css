@@ -35,6 +35,7 @@ nav {
     align-items: center;
 
     /* Card */
+    border-right: 1px solid #263244;
     background-color: var(--surface-color);
     padding: var(--space-3) 0 var(--space-3) 0;
     border-radius: var(--medium-radius);
@@ -43,6 +44,12 @@ nav {
 
     /* Spacing */
     margin: auto;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: darkgray;
 }
 
 main {
