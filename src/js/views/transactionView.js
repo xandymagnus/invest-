@@ -1,17 +1,17 @@
-// Buttons
-const buttonAdd = document.getElementById("choose");
-const buttonIncome = document.getElementById("income-btn");
-const buttonExpense = document.getElementById("expense-btn");
+const list = document.getElementById("list");
 
-// Inputs
-const inputIncome = document.querySelector(".input-income");
-const inputExpense = document.querySelector(".input-expense");
+export function displayTransaction(transaction) {
+    const newTransaction = document.createElement("li");
+    newTransaction.classList.add(transaction.type);
 
-export function displayOptions() {
-    divAdd.classList.toggle("hidden");
-        if (buttonAdd.textContent === "Add ˅"){
-            buttonAdd.textContent = "Add ˄";
-        } else {
-            buttonAdd.textContent = "Add ˅"
-        }
+    const transactionText = document.createElement("span");
+    transactionText.innerText =
+        `${transaction.type === "income" ? "Income" : "Expense"} - ${transaction.value}`;
+
+    const date = document.createElement("span");
+    date.innerText = `🗓️ (${transaction.date})`;
+    date.classList.add("date");
+
+    newTransaction.append(transactionText, date);
+    list.appendChild(newTransaction);
 }
