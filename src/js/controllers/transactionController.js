@@ -1,20 +1,103 @@
-// Locals modules
-import { calculate } from "../models/balanceModel";
-import { displayBalance } from "../views/summaryView";
-import { displayOptions } from "../views/transactionView";
+// Models
+import { calculate } from "../models/balanceModel.js";
+import {
+    isValidTransactionValue,
+    createTransaction
+} from "../models/transactionModel.js";
 
-// Buttons
-const buttonSend = document.querySelectorAll(".send-value");
+// Views
+import {
+    buttonAdd,
+    buttonIncome,
+    buttonExpense,
+    buttonSend,
+    toggleAddOptions,
+    showIncomeForm,
+    showExpenseForm,
+    returnToAddButton,
+    getIncomeValue,
+    getExpenseValue,
+    clearIncomeInput,
+    clearExpenseInput
+} from "../views/formView.js";
 
-const nextTotal = totalGenerator.next({
-    income: incomeValue,
-    expense: expenseValue
-}).value;
+import { displayTransaction } from "../views/transactionView.js";
+import { displayBalance } from "../views/summaryView.js";
 
-displayBalance(nextTotal);
+// Utils
+import { getCurrentDate } from "../utils/date.js";
 
-[...buttonSend].forEach(element => element.addEventListener("click", event => {
-    event.preventDefault();
+export function initializeTransactionController() {
 
-    displayOptions();
-}))
+    // Initialize balance generator
+    const totalGenerator = calculate();
+    totalGenerator.next();
+
+    // Show income and expense options
+    buttonAdd.addEventListener("click", event => {
+        event.preventDefault();
+        toggleAddOptions();
+    });
+
+    // Show income form
+    buttonIncome.addEventListener("click", event => {
+        event.preventDefault();
+        showIncomeForm();
+    });
+
+    // Show expense form
+    buttonExpense.addEventListener("click", event => {
+        event.preventDefault();
+        showExpenseForm();
+    });
+
+    // Send transaction
+    buttonSend.forEach(button =>
+        button.addEventListener("click", event => {
+            event.preventDefault();
+
+            const incomeValue = getIncomeValue();
+            const expenseValue = getExpenseValue();
+
+            let validate = false;
+
+            // Validate income
+            if (isValidTransactionValue(incomeValue)) {
+                const income = createTransaction(
+                    "income",
+                    incomeValue,
+                    getCurrentDate()
+                );
+
+                displayTransaction(income);
+                clearIncomeInput();
+
+                validate = true;
+            }
+
+            // Validate expense
+            if (isValidTransactionValue(expenseValue)) {
+                const expense = createTransaction(
+                    "expense",
+                    expenseValue,
+                    getCurrentDate()
+                );
+
+                displayTransaction(expense);
+                clearExpenseInput();
+
+                validate = true;
+            }
+
+            // Update balance
+            if (validate) {
+                const nextTotal = totalGenerator.next({
+                    income: incomeValue,
+                    expense: expenseValue
+                }).value;
+
+                displayBalance(nextTotal);
+                returnToAddButton();
+            }
+        }));
+}
