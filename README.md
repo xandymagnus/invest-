@@ -1,82 +1,64 @@
 # Invest+
 
-> A personal finance management system designed to organize expenses, income, and track financial health.
+A personal finance management application designed to help users track their income, expenses, and financial activity through a simple and organized interface.
 
-## About the Project
+## Overview
 
-**Invest+** is a personal finance management project designed to help users manage their financial transactions, organize expenses by category, and gain a clear understanding of how their money is being spent.
+Invest+ aims to provide a practical way to manage personal finances, monitor spending habits, and understand financial activity.
 
-The goal is to provide a minimalistic and intuitive interface where users can record expenses and income, review their financial history, and track their balance over a selected period.
-
-The project will initially be developed as a **Minimum Viable Product (MVP)**, prioritizing essential features for a functional personal finance management system, with room for future improvements.
-
-## Objectives
-
-- Simplify the recording and organization of financial transactions.
-- Enable users to track expenses and income.
-- Categorize expenses to identify spending patterns.
-- Display financial summaries and expense charts.
-- Build a well-structured, scalable, and maintainable application.
+The project is currently under development, starting with its core transaction management features.
 
 ## Features
 
-### MVP — Planned Features
+### Current
+- Add income transactions.
+- Add expense transactions.
+- Display transaction dates.
+- Calculate the current balance.
+- Separate application responsibilities using a modular architecture.
 
-- [x] Record expenses and income.
-- [x] Display financial transactions.
-- [ ] Edit and delete transactions.
-- [ ] Create and manage categories.
-- [ ] Display monthly expenses, income, and balance.
-- [ ] Search and filter transactions.
-- [ ] Display an expense breakdown by category.
-- [ ] Store data in a database.
-
-### Future Features
-
-- [ ] Monthly budget management.
-- [ ] Comparison between planned and actual expenses.
-- [ ] Multiple bank account management.
-- [ ] Custom tags for financial transactions.
-- [ ] Financial performance comparisons across different periods.
-- [ ] Financial statement imports.
-- [ ] User authentication.
+### Planned
+- Monthly financial summaries.
+- Spending charts by category.
+- Custom transaction categories and tags.
+- Bank account management.
+- Transaction search and filtering.
+- Planned vs. actual expense comparison.
+- Persistent data storage.
 
 ## Technologies
 
-Planned technologies for development:
+- HTML5
+- CSS3
+- JavaScript (ES Modules)
 
-- **Frontend:** HTML, CSS, and JavaScript.
-- **Backend:** Python and FastAPI.
-- **Database:** PostgreSQL.
-- **ORM:** SQLAlchemy.
-- **Version Control:** Git and GitHub.
+## Project Architecture
 
-_Technologies and features may be adjusted as the project evolves._
+The application follows a lightweight MVC-inspired architecture:
+
+- **Models:** Handle application data and business rules.
+- **Views:** Manage DOM elements and visual presentation.
+- **Controllers:** Coordinate user interactions, Models, and Views.
+- **Utils:** Provide reusable helper functions.
 
 ## Project Structure
 
-The directory structure will be defined during implementation, aiming to separate frontend, backend, data persistence, and documentation responsibilities.
+See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for a detailed explanation of the directory organization.
 
-## Versioning
+For architectural decisions and application flow, see [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-The project will follow **Semantic Versioning** in the `MAJOR.MINOR.PATCH` format.
+## Getting Started
 
-- **MAJOR:** Incompatible changes with previous versions.
-- **MINOR:** New features that maintain backward compatibility.
-- **PATCH:** Backward-compatible bug fixes and minor adjustments.
+1. Clone this repository.
+2. Open the project using a local development server, such as VS Code Live Server.
+3. Access the application through the local server URL.
 
-### Version History
+The application uses JavaScript ES Modules, so it should be served through a local web server rather than opened directly using the `file://` protocol.
 
-| Version  | Status   | Description                                                          |
-| -------- | -------- | -------------------------------------------------------------------- |
-| `v0.1.3` | Planning | Definition of the project scope, initial proposal, and MVP features. |
+## Development Status
 
-Versions will be updated as features are developed and released.
-
-## Project Status
-
-**In development — MVP planning phase.**
+Invest+ is an ongoing personal development project. Features, architecture, and documentation may evolve as development progresses.
 
 ## License
 
-The license will be defined in the future.
+See the [LICENSE](LICENSE) file for license information.
