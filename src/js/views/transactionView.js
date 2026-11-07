@@ -1,7 +1,8 @@
-const list = document.getElementById("list");
+const transactionTable = document.getElementById("transaction-body");
 
 export function displayTransaction(transaction) {
-    const newTransaction = document.createElement("li");
+    const newLine = document.createElement("tr")
+    const newTransaction = document.createElement("td");
     newTransaction.classList.add(transaction.type);
 
     const transactionText = document.createElement("span");
@@ -13,5 +14,5 @@ export function displayTransaction(transaction) {
     date.classList.add("date");
 
     newTransaction.append(transactionText, date);
-    list.appendChild(newTransaction);
+    transactionTable.appendChild(newTransaction);
 }
