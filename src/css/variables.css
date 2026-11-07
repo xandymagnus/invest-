@@ -11,6 +11,12 @@
     --text-color: #e2e8f0;
     --text-color-secondary: #94a3b8;
 
+    /* Fonts */
+    --title-font: 2rem;
+    --paragraph-font: 0.8rem;
+    --head-table-font: 0.5rem;
+    --body-table-font: 0.5rem;
+
     /* Spacing */
     --space-1: 4px;
     --space-2: 8px;
@@ -23,4 +29,7 @@
     --small-radius: 6px;
     --medium-radius: 10px;
     --large-radius: 16px;
+
+    /* Table */
+    --border-table: 2px solid rgb(var(--surface-color));
 }
