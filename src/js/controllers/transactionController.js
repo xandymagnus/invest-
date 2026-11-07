@@ -64,9 +64,11 @@ export function initializeTransactionController() {
             // Validate income
             if (isValidTransactionValue(incomeValue)) {
                 const income = createTransaction(
+                    getCurrentDate(),
                     "income",
+                    tag || undefined,
+                    type || undefined,
                     incomeValue,
-                    getCurrentDate()
                 );
 
                 displayTransaction(income);
@@ -78,9 +80,11 @@ export function initializeTransactionController() {
             // Validate expense
             if (isValidTransactionValue(expenseValue)) {
                 const expense = createTransaction(
+                    getCurrentDate(),
                     "expense",
-                    expenseValue,
-                    getCurrentDate()
+                    tag || undefined,
+                    type || undefined,
+                    incomeValue,
                 );
 
                 displayTransaction(expense);
