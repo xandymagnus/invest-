@@ -1,5 +1,6 @@
 const transactionTable = document.getElementById("transaction-body");
 
+// Create a new transition card using a <table>
 export function displayTransaction(transaction) {
     const newLine = document.createElement("tr")
     const newTransaction = document.createElement("td");
@@ -7,12 +8,12 @@ export function displayTransaction(transaction) {
 
     const transactionText = document.createElement("span");
     transactionText.innerText =
-        `${transaction.type === "income" ? "Income" : "Expense"} - ${transaction.value}`;
+        `${transaction.type === "income" ? "Income" : "Expense"} - ${transaction.value}`; // Implement the type of transiction
 
     const date = document.createElement("span");
     date.innerText = `🗓️ (${transaction.date})`;
     date.classList.add("date");
 
-    newTransaction.append(transactionText, date);
+    newTransaction.append(transactionText, date); // Append the <td> and other informations to <tr>
     transactionTable.appendChild(newTransaction);
 }
