@@ -84,7 +84,7 @@ export function initializeTransactionController() {
                     "expense",
                     tag || undefined,
                     type || undefined,
-                    incomeValue,
+                    expenseValue,
                 );
 
                 displayTransaction(expense);
