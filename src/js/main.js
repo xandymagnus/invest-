@@ -1,3 +1,3 @@
 import { initializeTransactionController } from "./controllers/transactionController.js";
 
-initializeTransactionController();
+initializeTransactionController(); // Initialize the transaction controler
