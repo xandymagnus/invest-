@@ -4,12 +4,10 @@ export function isValidTransactionValue(value) {
 }
 
 // Create a base transaction with necessary params
-export function createTransaction(date, establishment, tag, type, value) {
+export function createTransaction(type, date, value) {
     return {
-        date,
-        establishment,
-        tag,
         type,
+        date,
         value        
     };
 }
