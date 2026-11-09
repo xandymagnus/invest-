@@ -14,6 +14,7 @@ export function displayTransaction(transaction) {
     date.innerText = `🗓️ (${transaction.date})`;
     date.classList.add("date");
 
-    newTransaction.append(transactionText, date); // Append the <td> and other informations to <tr>
-    transactionTable.appendChild(newTransaction);
+    newTransaction.append(transactionText, date); // Append informations to <tr>
+    newLine.append(newTransaction);
+    transactionTable.appendChild(newLine);
 }
