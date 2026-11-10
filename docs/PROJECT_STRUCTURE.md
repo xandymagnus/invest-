@@ -24,7 +24,8 @@ invest-plus/
 ├── src/
 │   ├── css/
 │   │   ├── reset.css
-│   │   └── style.css
+│   │   ├── style.css
+│   │   └── vaiiables.css
 │   │
 │   ├── js/
 │   │   ├── models/
