@@ -15,6 +15,6 @@ export function displayTransaction(transaction) {
     date.classList.add("date");
 
     newTransaction.append(transactionText, date); // Append informations to <tr>
-    newLine.append(newTransaction);
-    transactionTable.appendChild(newLine);
+    newLine.append(newTransaction); // Append informations to <td>
+    transactionTable.appendChild(newLine); // Append the transition to <tbody>
 }
