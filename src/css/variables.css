@@ -31,5 +31,5 @@
     --large-radius: 16px;
 
     /* Table */
-    --border-table: 2px solid rgb(var(--border-color));
+    --border-table: 2px solid var(--border-color);
 }
