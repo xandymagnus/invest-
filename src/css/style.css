@@ -53,7 +53,6 @@ hr {
 }
 
 main {
-    border-radius: var(--medium-radius);
     padding: var(--space-6);
 }
 
@@ -61,7 +60,6 @@ main {
     /* Display */
     display: flex;
     justify-content: flex-end;
-
     /* Spacing */
     margin: 0 1vw 0 40vw;
 
@@ -105,30 +103,25 @@ main {
 }
 
 .income, .expense {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     background-color: var(--background-color);
     padding: var(--space-3) 0 var(--space-3) 0;
     border-radius: var(--medium-radius);
 }
 
-table {
-    display: flex;
-
+#transaction-table {
+    width: 100%;
     border-collapse: collapse;
     border: var(--border-table);
-    font-family: sans-serif;
-    font-size: var(--paragraph-font);
-    letter-spacing: 1px;
-    border-radius: var(--small-radius);
 }
 
-thead {
-    background-color: var(--surface-color);
+#transaction-table th,
+#transaction-table td {
+    padding: var(--space-3);
 }
 
-td:last-of-type {
+th,
+td {
+    padding: 12px;
     text-align: center;
 }
 
