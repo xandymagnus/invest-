@@ -77,6 +77,7 @@ Contains stylesheets used by the application.
 
 - `reset.css`: Resets browser default styles.
 - `style.css`: Contains the application's visual styles.
+- `variables.css`: Contains variables for style.css.
 
 ### JavaScript
 
