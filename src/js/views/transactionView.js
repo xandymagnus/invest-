@@ -2,19 +2,25 @@ const transactionTable = document.getElementById("transaction-body");
 
 // Create a new transition card using a <table>
 export function displayTransaction(transaction) {
-    const newLine = document.createElement("tr")
-    const newTransaction = document.createElement("td");
-    newTransaction.classList.add(transaction.type);
+    const row = document.createElement("tr")
+    const typeCell  = document.createElement("td");
+    typeCell.classList.add(transaction.type);
 
-    const transactionText = document.createElement("span");
-    transactionText.innerText =
-        `${transaction.type === "income" ? "Income" : "Expense"} - ${transaction.value}`; // Implement the type of transiction
+    typeCell.textContent =
+        `${transaction.type === "income" ? "Income" : "Expense"}`; // Implement the type of transiction
 
-    const date = document.createElement("span");
-    date.innerText = `🗓️ (${transaction.date})`;
-    date.classList.add("date");
+    const valueCell = document.createElement("td");
+    valueCell.classList.add(transaction.type)
+    valueCell.textContent = `R$${transaction.value}`
 
-    newTransaction.append(transactionText, date); // Append informations to <tr>
-    newLine.append(newTransaction); // Append informations to <td>
-    transactionTable.appendChild(newLine); // Append the transition to <tbody>
+    const dateCell = document.createElement("td");
+    dateCell.textContent = transaction.date;
+    dateCell.classList.add(
+        "dateCell",
+        transaction.type
+    );
+
+    row.append(typeCell, valueCell, dateCell); // Append <td> informations to <tr>
+
+    transactionTable.appendChild(row); // Append the transition to <tbody>
 }
