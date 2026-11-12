@@ -110,6 +110,7 @@ main {
 
 #transaction-table {
     width: 100%;
+    table-layout: auto;
     border: var(--border-table);
 }
 
