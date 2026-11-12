@@ -2,7 +2,7 @@
     /* Colors */
     --background-color: #0f141d;
     --surface-color: #171f2b;
-    --border-color: #263244;
+    --border-color: rgb(39, 51, 69);
     --buttom-color: #00008b;
     --buttom-secundary-color: #0000cd;
     --primary-color: #10b981;
@@ -10,6 +10,8 @@
     --expend-color: #f87171;
     --text-color: #e2e8f0;
     --text-color-secondary: #94a3b8;
+    --box-shadow-color: rgba(0,120,255,.1);
+    --box-shadow-color-secundary: rgba(0,120,255,.05);
 
     /* Fonts */
     --title-font: 2rem;
@@ -30,6 +32,10 @@
     --medium-radius: 10px;
     --large-radius: 16px;
 
+    /* Box */
+    --shadow-table: 0 0 10px var(--box-shadow-color),
+    0 0 30px var(--box-shadow-color-secundary);
+
     /* Table */
-    --border-table: 2px solid var(--border-color);
+    --border-table: 1px solid var(--border-color);
 }
