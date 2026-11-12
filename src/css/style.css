@@ -105,24 +105,34 @@ main {
 .income, .expense {
     background-color: var(--background-color);
     padding: var(--space-3) 0 var(--space-3) 0;
-    border-radius: var(--medium-radius);
 }
 
 #transaction-table {
     width: 100%;
-    table-layout: auto;
+    border-collapse: separate;
     border: var(--border-table);
+    border-radius: var(--small-radius);
+    box-shadow: var(--shadow-table);    
 }
 
 #transaction-table th,
 #transaction-table td {
     padding: var(--space-3);
+    border-bottom: var(--border-table);
+}
+
+thead {
+    background-color: var(--surface-color);
 }
 
 th,
 td {
     padding: 12px;
     text-align: center;
+}
+
+#result {
+    margin-top: var(--space-3);
 }
 
 /* Manipulated by JavaScript */
