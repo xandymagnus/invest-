@@ -1,4 +1,4 @@
-export const buttonEdit = document.querySelector(".button-edit");
+export const buttonEdit = document.querySelectorA(".button-edit");
 const transactionTable = document.getElementById("transaction-body");
 
 // Create a new transition card using a <table>
