@@ -21,7 +21,10 @@ import {
     clearExpenseInput
 } from "../views/formView.js";
 
-import { displayTransaction } from "../views/transactionView.js";
+import {
+     displayTransaction,
+     buttonEdit
+} from "../views/transactionView.js";
 import { displayBalance } from "../views/summaryView.js";
 
 // Utils
@@ -100,4 +103,10 @@ export function initializeTransactionController() {
                 returnToAddButton();
             }
         }));
+
+    buttonEdit.forEach(editButton => 
+        editButton.addEventListener("click", event => {
+        event.preventDefault();
+        buttonAdd.classList.add("hidden");  
+    }))
 }
