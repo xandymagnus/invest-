@@ -129,6 +129,13 @@ td {
     text-align: center;
 }
 
+.button-edit {
+    font-size: var(--paragraph-font);
+    color: #ffffff;
+    border: none;
+    background: none;
+}
+
 #result {
     margin-top: var(--space-3);
 }
