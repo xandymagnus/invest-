@@ -35,10 +35,8 @@ nav {
     align-items: center;
 
     /* Card */
-    border-right: 1px solid #263244;
-    background-color: var(--surface-color);
+    border-right: var(--border-table);
     padding: var(--space-3) 0 var(--space-3) 0;
-    border-radius: var(--medium-radius);
     width: 15vw;
     height: 50vh;
 
