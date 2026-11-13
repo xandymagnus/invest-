@@ -1,3 +1,4 @@
+export const buttonEdit = document.querySelector(".button-edit");
 const transactionTable = document.getElementById("transaction-body");
 
 // Create a new transition card using a <table>
@@ -20,13 +21,16 @@ export function displayTransaction(transaction) {
         transaction.type
     );
 
-    const buttonEdit = document.createElement("button"); // Create a button to edit transaction
-    buttonEdit.ariaLabel = "Transaction options"; // Add label to buttonEdit
-    buttonEdit.classList.add("button-edit");
-    buttonEdit.textContent = "...";
+    const actionCell = document.createElement("td"); // Create a td to envelop the button
+    const buttonCell = document.createElement("button"); // Create a button to edit transaction
+    buttonCell.ariaLabel = "Transaction options"; // Add label to buttonCell
+    buttonCell.classList.add("button-edit");
+    buttonCell.textContent = "...";
+
+    actionCell.appendChild(buttonCell); // Put the button in a td to append in a row
     
 
-    row.append(typeCell, valueCell, dateCell, buttonEdit); // Append <td> informations to <tr>
+    row.append(typeCell, valueCell, dateCell, actionCell); // Append <td> informations to <tr>
 
     transactionTable.appendChild(row); // Append the transition to <tbody>
 }
