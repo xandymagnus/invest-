@@ -104,9 +104,9 @@ export function initializeTransactionController() {
             }
         }));
 
-    buttonEdit.forEach(editButton => 
-        editButton.addEventListener("click", event => {
-        event.preventDefault();
-        buttonAdd.classList.add("hidden");  
-    }))
+    // buttonEdit.forEach(editButton => 
+    //     editButton.addEventListener("click", event => {
+    //     event.preventDefault();
+    //     buttonAdd.classList.add("hidden");  
+    // }))
 }
