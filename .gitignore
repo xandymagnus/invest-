@@ -2,3 +2,4 @@ requirements.txt
 settings.json
 template.png
 .venv
+.vscode/
