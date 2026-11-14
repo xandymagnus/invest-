@@ -21,10 +21,7 @@ import {
     clearExpenseInput
 } from "../views/formView.js";
 
-import {
-     displayTransaction,
-     buttonEdit
-} from "../views/transactionView.js";
+import { displayTransaction } from "../views/transactionView.js";
 import { displayBalance } from "../views/summaryView.js";
 
 // Utils
