@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 
 
@@ -116,7 +117,6 @@ main {
 
     /* Scroll */
     height: 50vh;
-    overflow-y: auto;
 }
 
 #transaction-table th,
