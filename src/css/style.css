@@ -115,8 +115,6 @@ main {
     border-radius: var(--small-radius);
     box-shadow: var(--shadow-table);
 
-    /* Scroll */
-    height: 50vh;
 }
 
 #transaction-table th,
