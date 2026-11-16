@@ -1,4 +1,5 @@
 const transactionTable = document.getElementById("transaction-body");
+export const editButton = document.querySelector(".button-edit");
 
 // Create a new transition card using a <table>
 export function displayTransaction(transaction) {
