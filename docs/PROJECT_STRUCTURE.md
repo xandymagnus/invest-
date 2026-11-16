@@ -27,6 +27,10 @@ invest-plus/
 │   │   ├── style.css
 │   │   └── vaiiables.css
 │   │
+│   ├── html/
+│   │   ├── expensesByCategory.html
+│   │   └── management.html
+│   │
 │   ├── js/
 │   │   ├── models/
 │   │   │   ├── transactionModel.js
