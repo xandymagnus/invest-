@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project follows Semantic Versioning.
+This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
@@ -10,17 +10,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Replaced the transaction list with a table-based layout.
 - Modernized the application interface and improved its visual presentation.
 - Refactored transaction rendering to create individual table rows (`tr`) within the table body (`tbody`), allowing each transaction to be independently accessed and manipulated.
+- Centralized reusable CSS properties in `variables.css`.
 
 ## [0.1.0] - Unreleased
 
 ### Added
-- Initial HTML and CSS structure.
-- Basic income and expense input.
+- Initial application structure.
+- Income and expense registration.
+- Transaction value validation.
 - Transaction date display.
-- Basic balance calculation.
-- JavaScript ES Modules.
-- MVC-inspired project organization.
+- Balance calculation.
+- JavaScript ES Modules organization.
+- MVC-inspired application architecture.
 - Initial project documentation.
-
-### Changed
-- Separated application responsibilities into Models, Views, Controllers, and Utils.
