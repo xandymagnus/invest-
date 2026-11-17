@@ -1,30 +1,25 @@
 # Invest+
 
-A personal finance management application designed to help users track their income, expenses, and financial activity through a simple and organized interface.
-
-## Overview
-
-Invest+ aims to provide a practical way to manage personal finances, monitor spending habits, and understand financial activity.
-
-The project is currently under development, starting with its core transaction management features.
+Invest+ is a personal finance management application designed to help users organize and monitor their income and expenses through a simple and intuitive interface.
 
 ## Features
 
-### Current
-- Add income transactions.
-- Add expense transactions.
-- Display transaction dates.
-- Calculate the current balance.
-- Separate application responsibilities using a modular architecture.
+### Currently Implemented
+- Register income transactions.
+- Register expense transactions.
+- Validate transaction values.
+- Display transactions in a structured table.
+- Display transaction type, value, and date.
+- Calculate and display the current balance.
+- Dynamically create individual table rows for each transaction.
 
-### Planned
-- Monthly financial summaries.
-- Spending charts by category.
-- Custom transaction categories and tags.
-- Bank account management.
+### Planned Features
+- Edit and delete transactions.
+- Expense visualization by category.
+- Monthly financial management.
+- Category, account, and label management.
 - Transaction search and filtering.
-- Planned vs. actual expense comparison.
-- Persistent data storage.
+- Data persistence.
 
 ## Technologies
 
@@ -34,31 +29,36 @@ The project is currently under development, starting with its core transaction m
 
 ## Project Architecture
 
-The application follows a lightweight MVC-inspired architecture:
+The application follows a lightweight MVC-inspired architecture, separating responsibilities into:
 
-- **Models:** Handle application data and business rules.
-- **Views:** Manage DOM elements and visual presentation.
-- **Controllers:** Coordinate user interactions, Models, and Views.
-- **Utils:** Provide reusable helper functions.
-
-## Project Structure
-
-See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for a detailed explanation of the directory organization.
-
-For architectural decisions and application flow, see [ARCHITECTURE.md](docs/ARCHITECTURE.md).
+- **Models:** Data structures, validation, and financial calculations.
+- **Views:** DOM manipulation and visual presentation.
+- **Controllers:** Event handling and coordination between application components.
+- **Utils:** Reusable utility functions.
 
 ## Getting Started
 
-1. Clone this repository.
-2. Open the project using a local development server, such as VS Code Live Server.
-3. Access the application through the local server URL.
+1. Clone the repository.
+2. Open the project in your preferred code editor.
+3. Run the application using a local development server, such as the VS Code Live Server extension.
+4. Open `index.html` through the local server.
 
-The application uses JavaScript ES Modules, so it should be served through a local web server rather than opened directly using the `file://` protocol.
+A local server is required for proper ES Module loading in the browser.
+
+## Project Documentation
+
+Additional technical documentation is available in the `docs/` directory:
+
+- `ARCHITECTURE.md`
+- `PROJECT_STRUCTURE.md`
+- `CODE_STYLE.md`
+- `DATA_MODEL.md`
+- `ROADMAP.md`
 
 ## Development Status
 
-Invest+ is an ongoing personal development project. Features, architecture, and documentation may evolve as development progresses.
+Invest+ is currently under development. Its initial functionality focuses on transaction registration, balance calculation, and dynamic transaction rendering.
 
 ## License
 
-See the [LICENSE](LICENSE) file for license information.
+See the `LICENSE` file for information about usage, distribution, and modification permissions.
