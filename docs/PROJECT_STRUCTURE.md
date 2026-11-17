@@ -74,6 +74,7 @@ invest-plus/
 - `docs/`: Contains technical project documentation.
 - `src/`: Contains the application's source code and assets.
 - `tests/`: Reserved for project tests.
+- `.gitignore`: Specifies files and directories that Git should ignore, including virtual environments, editor settings, and selected configuration and asset files.
 
 ## Documentation Directory
 
