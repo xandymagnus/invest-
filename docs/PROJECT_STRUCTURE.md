@@ -53,8 +53,17 @@ invest-plus/
 │
 ├── tests/
 │   ├── models/
+│   │   ├── balanceModel.test.js
+│   │   └── transactionModel.test.js
+│   │
 │   ├── utils/
+│   │   └── date.test.js
+│   │
 │   └── views/
+│       ├── formView.test.js
+│       ├── summaryView.test.js
+│       └── transactionView.test.js
+│   
 │
 ├── .gitignore
 ├── CHANGELOG.md
