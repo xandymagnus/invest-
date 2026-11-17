@@ -2,93 +2,115 @@
 
 ## Overview
 
-Invest+ uses a lightweight MVC-inspired architecture to organize application responsibilities and improve maintainability.
+Invest+ follows a lightweight MVC-inspired architecture using JavaScript ES Modules.
 
-The architecture separates data management, visual presentation, and user interaction into independent modules.
+The application separates its responsibilities into four main areas:
 
-## Architectural Pattern
+- Models
+- Views
+- Controllers
+- Utils
 
-The project is organized around three main components:
+This organization helps maintain separation of concerns and makes the code easier to understand, maintain, and expand.
 
-### Model
+## Architecture Layers
 
-Responsible for application data and business rules.
+### 1. Models
+
+The Models layer handles application data and financial operations.
+
+**Files:**
+- `balanceModel.js`
+- `transactionModel.js`
 
 Responsibilities:
+
 - Validate transaction values.
 - Create transaction objects.
-- Calculate the current balance.
-- Manage data-related operations.
+- Calculate the accumulated financial balance.
 
-Location: `src/js/models/`
+Models do not directly manipulate the DOM.
 
-### View
+### 2. Views
 
-Responsible for the visual representation of application data and the manipulation of DOM elements.
+The Views layer handles the application's visual representation and DOM manipulation.
 
-Responsibilities:
-- Display transactions.
-- Update the balance displayed on the interface.
-- Show and hide forms.
-- Manage visual elements.
-
-Location: `src/js/views/`
-
-### Controller
-
-Responsible for handling user interactions and coordinating communication between Models and Views.
+**Files:**
+- `formView.js`
+- `summaryView.js`
+- `transactionView.js`
 
 Responsibilities:
+
+- Control the visibility of transaction forms.
+- Retrieve and clear input values.
+- Display transactions in the HTML table.
+- Display the calculated balance.
+
+The Views layer is responsible for presenting information, not coordinating the application's overall workflow.
+
+### 3. Controllers
+
+The Controllers layer coordinates user interactions and communication between Models and Views.
+
+**File:**
+- `transactionController.js`
+
+Responsibilities:
+
 - Register event listeners.
-- Receive user actions.
-- Request operations from Models.
-- Request interface updates from Views.
+- Handle income and expense form interactions.
+- Request transaction validation.
+- Coordinate transaction creation and display.
+- Request balance updates.
+- Update the interface through the Views layer.
 
-Location: `src/js/controllers/`
+### 4. Utils
 
-## Supporting Modules
+The Utils layer contains reusable functions that do not belong exclusively to a specific MVC layer.
 
-### Utils
+**File:**
+- `date.js`
 
-Contains reusable helper functions that do not belong exclusively to the Model, View, or Controller layers.
+Responsibility:
 
-Location: `src/js/utils/`
+- Retrieve and format the current date.
 
-### Main Entry Point
+## Application Entry Point
 
-The `main.js` file acts as the application's entry point.
+**File:** `main.js`
 
-It imports and initializes the required controllers.
+The main file initializes the application by importing and executing the transaction controller.
 
-Location: `src/js/main.js`
+It acts as the entry point for the JavaScript application.
 
 ## Application Flow
 
-The general interaction flow follows this sequence:
+The transaction registration process follows this sequence:
 
-1. The user interacts with the interface.
-2. The Controller receives the event.
-3. The Controller obtains the required information through the Views.
-4. The Model processes or validates the information.
-5. The Controller requests the corresponding visual update.
-6. The View updates the DOM.
+1. The user selects whether to register income or an expense.
+2. The Controller handles the interaction.
+3. The Controller retrieves the input values through the Form View.
+4. The Model validates the transaction value.
+5. The Model creates the transaction object.
+6. The Transaction View creates a new table row and displays the transaction.
+7. The Balance Model calculates the updated balance.
+8. The Summary View displays the new balance.
 
-## Module System
+## Module Communication
 
-The project uses JavaScript ES Modules.
+The application uses ES Modules through `import` and `export` statements.
 
-Modules communicate through named exports and imports, allowing each file to expose only the functionality required by other parts of the application.
-
-The HTML entry point loads the application using `type="module"`.
+Each module exports only the functions or references required by other modules, helping keep responsibilities separated.
 
 ## Architectural Principles
 
-- Separation of responsibilities.
-- Reusable modules.
-- Low coupling between components.
-- Clear module dependencies.
-- Maintainable project structure.
+- Separation of concerns.
+- Reusable functions.
+- Independent modules.
+- Centralized application initialization.
+- Separation between data processing and DOM manipulation.
 
 ## Future Considerations
 
-As the application grows, the architecture may be extended to support persistent storage, additional financial features, and automated tests.
+As the application grows, additional modules may be introduced for transaction editing, deletion, data persistence, filtering, and financial reporting.
