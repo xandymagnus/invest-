@@ -1,96 +1,84 @@
-# Code Style Guidelines
+# Code Style
 
 ## Overview
 
-This document defines the coding conventions used throughout the Invest+ project.
+This document describes the coding conventions currently used in Invest+.
 
-The goal is to maintain consistency, readability, and maintainability.
-
-## General Guidelines
-
-- Write code using clear and descriptive names.
-- Prefer simplicity over unnecessary complexity.
-- Keep functions focused on a single responsibility.
-- Avoid duplicated code whenever possible.
-- Use comments to explain intent when necessary.
+The goal is to maintain consistency, readability, and maintainability throughout the project.
 
 ## JavaScript
 
 ### Naming Conventions
 
-| Element | Convention | Example |
-|---|---|---|
-| Variables | camelCase | `transactionValue` |
-| Functions | camelCase | `calculateBalance()` |
-| Classes | PascalCase | `TransactionManager` |
-| Constants | camelCase | `maximumValue` |
-| Files | camelCase | `transactionModel.js` |
+- Variables and functions use `camelCase`.
+- File names use `camelCase`.
+- Constants representing DOM elements follow descriptive `camelCase` names.
+- CSS classes and HTML IDs use descriptive names, generally following kebab-case.
 
-### Formatting
+Examples:
 
-- Use 4 spaces for indentation.
-- Use semicolons at the end of statements.
-- Use double quotes for strings.
-- Use meaningful variable and function names.
-- Separate logical sections with blank lines.
+```javascript
+const transactionTable = document.getElementById("transaction-body");
 
-### Modules
-
-- Use ES Modules with `import` and `export`.
-- Prefer named exports for shared functionality.
-- Use explicit `.js` extensions in relative imports.
-- Keep module responsibilities clearly separated.
+function displayTransaction(transaction) {
+    // Function implementation
+}
+```
 
 ### Functions
 
-- Each function should have a clear purpose.
-- Prefer descriptive function names.
-- Avoid unnecessarily large functions.
+- Use descriptive function names.
+- Keep functions focused on a specific responsibility.
+- Export functions when they need to be accessed by other modules.
+
+### Modules
+
+The project uses JavaScript ES Modules.
+
+- Use `export` to expose functions.
+- Use `import` to access functionality from other modules.
+- Include the `.js` extension in browser module imports.
+
+### Formatting
+
+- Use four spaces for indentation.
+- Use semicolons at the end of statements.
+- Use double quotes for strings.
+- Separate logical sections with blank lines.
+- Use comments to explain relevant operations.
 
 ## HTML
 
 - Use semantic HTML elements whenever appropriate.
-- Use lowercase element names.
-- Use descriptive and meaningful IDs and classes.
-- Use kebab-case for IDs and CSS classes.
-
-Example:
-
-```html
-<section class="transaction-list">
-    <h2>Transactions</h2>
-</section>
-```
+- Use descriptive IDs and class names.
+- Use lowercase HTML tags.
+- Use indentation to represent element hierarchy.
+- Keep document structure organized.
 
 ## CSS
 
-### Naming Conventions
+- Use descriptive class and ID selectors.
+- Use CSS variables for reusable values.
+- Keep layout, spacing, and visual styles organized.
+- Use the `.hidden` class to control element visibility through JavaScript.
 
-Use kebab-case for classes, IDs, and custom properties.
+### CSS Variables
 
-Examples:
+Reusable visual properties are centralized in `variables.css`.
 
-```css
-.transaction-list {}
-.balance-summary {}
---primary-color: #000;
-```
+These include:
 
-### Formatting
-
-- Use 4 spaces for indentation.
-- Keep selectors organized.
-- Group related styles together.
-- Prefer reusable classes over duplicated declarations.
+- Colors.
+- Font sizes.
+- Spacing values.
+- Border radii.
+- Shadows.
+- Table borders.
 
 ## Comments
 
-Comments should explain the purpose of a section or clarify decisions that may not be immediately obvious.
-
-Avoid comments that simply repeat what the code already expresses.
+Comments should explain relevant implementation details, especially when the purpose of an operation may not be immediately clear.
 
 ## Documentation
 
-Documentation files should be written in English and use Markdown.
-
-Update the relevant documentation whenever a significant architectural or structural change occurs.
+Project documentation is written in English to maintain consistency with code identifiers and technical terminology.
