@@ -1,59 +1,68 @@
-# Development Roadmap
-
-## Overview
+# Roadmap
 
 This document tracks the development progress and planned improvements for Invest+.
 
-The roadmap may change as requirements evolve.
+## Phase 1 — Initial Application
 
-## Phase 1 — Core Application
+- [x] Create the main HTML structure.
+- [x] Implement the initial application layout.
+- [x] Create income and expense forms.
+- [x] Implement transaction value validation.
+- [x] Implement transaction object creation.
+- [x] Calculate the accumulated balance.
+- [x] Display the current balance.
+- [x] Display the current transaction date.
 
-- [x] Basic HTML and CSS structure.
-- [x] Income transaction input.
-- [x] Expense transaction input.
-- [x] Transaction date display.
-- [x] Basic balance calculation.
-- [x] JavaScript module organization.
-- [x] MVC-inspired architecture separation.
+## Phase 2 — Code Organization and Interface
 
-## Phase 2 — Transaction Management
+- [x] Organize JavaScript using ES Modules.
+- [x] Implement a lightweight MVC-inspired architecture.
+- [x] Separate Models, Views, Controllers, and Utils.
+- [x] Replace the transaction list with a table-based layout.
+- [x] Dynamically create individual transaction rows.
+- [x] Centralize CSS variables.
+- [x] Modernize the application interface.
 
-- [ ] Improve transaction data structure.
-- [ ] Add transaction descriptions.
-- [ ] Add transaction categories.
+## Phase 3 — Transaction Management
+
 - [ ] Implement transaction editing.
 - [ ] Implement transaction deletion.
-- [ ] Add transaction search and filtering.
+- [ ] Add transaction identifiers.
+- [ ] Improve transaction form validation.
+- [ ] Add transaction descriptions.
 
-## Phase 3 — Financial Overview
+## Phase 4 — Financial Organization
 
-- [ ] Monthly financial summaries.
-- [ ] Spending charts by category.
-- [ ] Planned vs. actual expense comparison.
-- [ ] Improved financial overview.
+- [ ] Implement category management.
+- [ ] Implement account management.
+- [ ] Implement label management.
+- [ ] Add transaction filtering.
+- [ ] Add transaction search.
 
-## Phase 4 — Organization
+## Phase 5 — Financial Overview
 
-- [ ] Custom tags.
-- [ ] Bank account management.
-- [ ] Payment method organization.
+- [ ] Implement expense visualization by category.
+- [ ] Develop the monthly management page.
+- [ ] Add monthly financial summaries.
+- [ ] Compare planned and actual expenses.
 
-## Phase 5 — Data Persistence
+## Phase 6 — Data Persistence
 
-- [ ] Implement persistent data storage.
-- [ ] Preserve transactions between sessions.
-- [ ] Review data management architecture.
+- [ ] Define a persistent data storage solution.
+- [ ] Implement transaction persistence.
+- [ ] Load previously saved transactions.
+- [ ] Preserve financial balance between sessions.
 
-## Phase 6 — Quality and Testing
+## Phase 7 — Quality and Testing
 
-- [ ] Create automated tests for Models.
-- [ ] Create automated tests for Utils.
-- [ ] Test View interactions.
-- [ ] Review application accessibility.
+- [ ] Define a testing strategy.
+- [ ] Implement automated tests.
 - [ ] Improve error handling.
+- [ ] Review application accessibility.
+- [ ] Improve responsive behavior.
 
-## Notes
+## Development Status
 
-Completed items represent functionality already implemented in the project.
+Invest+ is currently focused on its initial transaction management functionality and the organization of its application architecture.
 
-Planned items may be reorganized according to development priorities.
+Future phases will expand the application into a more complete personal finance management tool.
