@@ -2,141 +2,140 @@
 
 ## Overview
 
-This document describes the directory organization of Invest+ and the responsibilities assigned to each folder and file.
-
-## Directory Tree
+The project is organized into documentation, source code, assets, tests, and configuration files.
 
 ```text
 invest-plus/
 │
+├── .vscode/
+│   ├── launch.json
+│   └── settings.json
+│
 ├── docs/
 │   ├── ARCHITECTURE.md
-│   ├── PROJECT_STRUCTURE.md
 │   ├── CODE_STYLE.md
 │   ├── DATA_MODEL.md
+│   ├── PROJECT_STRUCTURE.md
 │   └── ROADMAP.md
+│
+├── src/
+│   ├── assets/
+│   │   ├── icons/
+│   │   └── images/
+│   │       └── template.png
+│   │
+│   ├── css/
+│   │   ├── reset.css
+│   │   ├── style.css
+│   │   └── variables.css
+│   │
+│   ├── html/
+│   │   ├── expensesByCategory.html
+│   │   └── management.html
+│   │
+│   └── js/
+│       ├── controllers/
+│       │   └── transactionController.js
+│       │
+│       ├── models/
+│       │   ├── balanceModel.js
+│       │   └── transactionModel.js
+│       │
+│       ├── utils/
+│       │   └── date.js
+│       │
+│       ├── views/
+│       │   ├── formView.js
+│       │   ├── summaryView.js
+│       │   └── transactionView.js
+│       │
+│       └── main.js
 │
 ├── tests/
 │   ├── models/
 │   ├── utils/
 │   └── views/
 │
-├── src/
-│   ├── css/
-│   │   ├── reset.css
-│   │   ├── style.css
-│   │   └── vaiiables.css
-│   │
-│   ├── html/
-│   │   ├── expensesByCategory.html
-│   │   └── management.html
-│   │
-│   ├── js/
-│   │   ├── models/
-│   │   │   ├── transactionModel.js
-│   │   │   └── balanceModel.js
-│   │   │
-│   │   ├── views/
-│   │   │   ├── transactionView.js
-│   │   │   ├── summaryView.js
-│   │   │   └── formView.js
-│   │   │
-│   │   ├── controllers/
-│   │   │   └── transactionController.js
-│   │   │
-│   │   ├── utils/
-│   │   │   └── date.js
-│   │   │
-│   │   └── main.js
-│   │
-│   └── assets/
-│       ├── images/
-│       └── icons/
-│
-├── index.html
-├── README.md
+├── .gitignore
 ├── CHANGELOG.md
+├── index.html
 ├── LICENSE
-└── .gitignore
+└── README.md
 ```
 
 ## Root Directory
 
-| File / Folder | Responsibility |
-|---|---|
-| `docs/` | Project documentation. |
-| `tests/` | Automated tests. |
-| `src/` | Application source files. |
-| `index.html` | Main HTML document. |
-| `README.md` | Project introduction and setup instructions. |
-| `CHANGELOG.md` | Record of relevant project changes. |
-| `LICENSE` | Project licensing information. |
-| `.gitignore` | Files and folders excluded from Git tracking. |
+- `index.html`: Main application page.
+- `README.md`: Project overview and instructions.
+- `CHANGELOG.md`: Records notable project changes.
+- `LICENSE`: Defines usage, modification, and distribution permissions.
+- `.gitignore`: Specifies files and directories excluded from Git tracking.
+- `.vscode/`: Contains Visual Studio Code workspace configuration.
+- `docs/`: Contains technical project documentation.
+- `src/`: Contains the application's source code and assets.
+- `tests/`: Reserved for project tests.
+
+## Documentation Directory
+
+- `ARCHITECTURE.md`: Explains the application architecture and module responsibilities.
+- `CODE_STYLE.md`: Defines coding conventions.
+- `DATA_MODEL.md`: Documents application data structures and rules.
+- `PROJECT_STRUCTURE.md`: Describes the project organization.
+- `ROADMAP.md`: Tracks implemented and planned features.
 
 ## Source Directory
 
-### CSS
+### assets/
 
-Contains stylesheets used by the application.
+Stores resources used by the application.
 
-- `reset.css`: Resets browser default styles.
-- `style.css`: Contains the application's visual styles.
-- `variables.css`: Contains variables for style.css.
+- `icons/`: Reserved for icon assets.
+- `images/`: Stores image resources, including `template.png`.
 
-### JavaScript
+### css/
 
-Contains the application's logic, divided into modules.
+Contains the application's stylesheets.
 
-#### Models
+- `reset.css`: Resets default browser styles.
+- `variables.css`: Defines reusable CSS variables.
+- `style.css`: Contains the main application styles.
 
-Responsible for data and business rules.
+### html/
 
-- `transactionModel.js`: Transaction creation and validation.
-- `balanceModel.js`: Balance calculation.
+Contains additional application pages.
 
-#### Views
+- `expensesByCategory.html`: Planned page for expense visualization by category.
+- `management.html`: Planned page for financial management.
 
-Responsible for DOM manipulation and visual presentation.
+Both files are currently empty.
 
-- `transactionView.js`: Displays transactions.
-- `summaryView.js`: Displays financial summaries.
-- `formView.js`: Manages transaction forms and related interface elements.
+### js/
 
-#### Controllers
+Contains the JavaScript application.
 
-Responsible for coordinating user interactions.
+#### controllers/
 
-- `transactionController.js`: Handles transaction-related events and coordinates Models and Views.
+- `transactionController.js`: Handles transaction-related interactions and coordinates Models and Views.
 
-#### Utils
+#### models/
 
-Contains reusable helper functions.
+- `balanceModel.js`: Calculates the accumulated financial balance.
+- `transactionModel.js`: Validates transaction values and creates transaction objects.
 
-- `date.js`: Provides date-related functionality.
+#### utils/
 
-#### Main
+- `date.js`: Retrieves and formats the current date.
 
-- `main.js`: Application entry point and controller initialization.
+#### views/
 
-### Assets
+- `formView.js`: Controls transaction forms and input values.
+- `summaryView.js`: Displays the current balance.
+- `transactionView.js`: Creates and displays individual transaction rows.
 
-Contains static resources used by the interface.
+#### main.js
 
-- `images/`: Image files.
-- `icons/`: Icon files.
+Initializes the application by executing the transaction controller.
 
 ## Tests Directory
 
-Contains automated tests organized according to the application modules.
-
-Test files should follow the naming convention:
-
-`moduleName.test.js`
-
-Examples:
-
-- `balanceModel.test.js`
-- `transactionModel.test.js`
-- `date.test.js`
-
-Tests should be organized by the component they verify.
+The `tests/` directory is reserved for automated tests. Its current contents and testing strategy have not yet been defined.
