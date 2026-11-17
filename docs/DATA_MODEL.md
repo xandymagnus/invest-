@@ -2,74 +2,92 @@
 
 ## Overview
 
-This document describes the main data structures used by Invest+.
+Invest+ currently uses JavaScript objects to represent financial transactions.
 
-The application currently focuses on financial transactions and balance calculations.
+The application supports two transaction types:
 
-## Transaction
+- Income
+- Expense
 
-A transaction represents a financial operation, such as income or expense.
+## Transaction Object
 
-### Attributes
+Transactions are created through the `createTransaction()` function in `transactionModel.js`.
 
-| Attribute | Type | Description |
-|---|---|---|
-| `type` | String | Transaction type: `income` or `expense`. |
-| `value` | Number | Monetary value of the transaction. |
-| `date` | String | Date associated with the transaction. |
-
-### Example
+### Structure
 
 ```javascript
 {
     type: "income",
-    value: 500,
-    date: "11/6/2026"
+    date: "11/17/2026",
+    value: 150
 }
 ```
 
-## Transaction Types
+### Properties
 
-### Income
+| Property | Type | Description |
+|---|---|---|
+| `type` | String | Transaction classification: `income` or `expense`. |
+| `date` | String | Date associated with the transaction. |
+| `value` | Number | Monetary transaction value. |
 
-Represents money received.
+## Transaction Validation
 
-Income transactions increase the total balance.
+The `isValidTransactionValue()` function validates transaction values.
 
-### Expense
+A value is considered valid when:
 
-Represents money spent.
+- It is greater than zero.
+- It is less than or equal to 1,000,000,000.
 
-Expense transactions decrease the total balance.
-
-## Balance
-
-The balance represents the difference between all income and expenses.
-
-### Calculation
-
-```text
-Balance = Total Income - Total Expenses
+```javascript
+value > 0 && value <= 1e+9
 ```
 
-The current implementation uses a generator function to maintain the calculated balance as transactions are processed.
+## Date Format
 
-## Data Validation
+The `getCurrentDate()` function retrieves the current date using JavaScript's `Date` object.
 
-Transaction values must satisfy the following conditions:
+The returned format is:
 
-- The value must be greater than zero.
-- The value must not exceed 1,000,000,000.
+```text
+MM/DD/YYYY
+```
+
+## Balance Calculation
+
+The balance is calculated by the `calculate()` generator function in `balanceModel.js`.
+
+The calculation follows this rule:
+
+```text
+New Balance = Previous Balance + Income - Expense
+```
+
+The initial balance is zero.
+
+The generator maintains the accumulated balance between calls and receives the income and expense values through its `next()` method.
+
+## Current Data Handling
+
+Currently:
+
+- Transactions are represented as JavaScript objects.
+- Transaction information is rendered dynamically in the HTML table.
+- The accumulated balance is maintained in memory.
+- Data persistence has not yet been implemented.
+
+Refreshing the page resets the application's in-memory transaction data and calculated balance.
 
 ## Future Considerations
 
-The data model may be extended with additional attributes, such as:
+The transaction model may be expanded with additional properties, such as:
 
-- Transaction ID.
-- Description.
+- Transaction identifier.
 - Category.
-- Tags.
-- Bank account.
+- Account.
+- Label.
+- Description.
 - Payment method.
 
-Persistent storage and additional relationships may be introduced as the project evolves.
+These properties are not currently part of the implemented transaction object.
